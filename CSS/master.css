@@ -61,6 +61,19 @@ h1{
 .scroll-down-icon:hover{
   bottom: 65px;
 }
+.scroll-left{
+  left: 40px;
+}
+.scroll-right{
+  right: 40px;
+}
+.scroll-start-icon{
+  position: fixed;
+  top: 40vh;
+  /* cursor: pointer; */
+  height: 20vh;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(1000%) contrast(200%);
+}
 
 /* ----------Jobs Section------------------ */
 #jobs-section{
