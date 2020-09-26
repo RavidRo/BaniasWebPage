@@ -3,14 +3,11 @@
 }
 
 .jobs-section-padder{
-  grid-template-rows: auto calc(var(--dot-diameter) * 4 + 4 * 25px) auto;
-}
-.jobs-section-padder{
   padding: 8% 0 5% 25%;
   position: relative;
   z-index: 2;
   display: grid;
-  /* grid-template-rows: auto 50vh 5vh; */
+  grid-template-rows: auto calc(var(--dot-diameter) * 4 + 4 * 25px) auto;
   width: 60%;
 }
 
@@ -34,7 +31,8 @@ ul.titles li {
   opacity: 0;
   padding: 0;
   position: absolute;
-  width: 45rem;
+  width: 60vw;
+  overflow: auto;
 }
 ul.titles li.title1 {
   -webkit-transform: translate3d(0, -187.5%, 0);

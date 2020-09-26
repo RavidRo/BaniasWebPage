@@ -11,6 +11,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: black;
+  overflow-x: hidden; // hide horizontal
 }
 
 h3, h2, h1{
@@ -81,8 +82,16 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
   min-height: var(--opening-height);
 }
+
+@media only screen and (max-width: 750px) {
+  .opening-background-image{
+    background-size: auto 100%;
+  }
+}
+
 .opening-sentance{
   padding-left: 15vw;
+
   /* vertical alignment */
   display: table-cell;
   width: 100vw;
