@@ -6,6 +6,7 @@
   --lighter-blue-color: rgba(2,0,97,1);
   --darker-blue-color: rgba(3,22,65,1);
   --opening-height: 40vh;
+  --opening-height-phone: 30vh;
 }
 body{
   margin: 0;
@@ -86,6 +87,10 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 750px) {
   .opening-background-image{
     background-size: auto 100%;
+    min-height: var(--opening-height-phone);
+  }
+  #opening-section{
+    height: var(--opening-height-phone);
   }
 }
 
