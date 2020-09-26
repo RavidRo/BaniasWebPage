@@ -1,69 +1,47 @@
-// Getting the needed elements
-const section = document.getElementById('description-grid');
-const texts = document.getElementsByClassName('description');
-const scrolls = document.getElementsByClassName('scroll-start-icon');
+// Set the menu scroll buttons
+const logoBtn = document.getElementById('logo-btn')
+const aboutBtn = document.getElementById('about-btn')
+const careerBtn = document.getElementById('career-btn')
+logoBtn.onclick = scrollSmoothly;
+aboutBtn.onclick = scrollSmoothly;
+careerBtn.onclick = scrollSmoothly;
 
+function scrollSmoothly(e){
+  e.preventDefault();
+  document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+  });
+}
 
-var anchoreScrolling = false;
+const logoImg = document.querySelector('.logo-nav')
 document.onscroll = function(e){
-  // grid-template-rows:  0 100vh 92vh 8vh --> 100vh 46vh 46vh 8vh
   let scrollY = window.pageYOffset;
   let windowHeight = window.innerHeight
   let precent = scrollY/windowHeight;
 
-  // Makes sure the events doesnt trigger when using the scroll buttons
-  if(anchoreScrolling) return false;
-
-  // The image is getting smaller and the text is bieng shown
-  if(precent <= 1){
-    for (const elem of texts){
-      elem.style.opacity = `${precent}`;
-    }
-    section.style.gridTemplateRows = `${precent*100}vh ${100-precent*54}vh ${92-precent*46}vh 8vh`;
-
-    cancelJobsAnimation()
-  }
-  //Stay at the same block for 20vh
-  else if(1 < precent && precent <= 1.1){
-    for (const elem of texts){
-      elem.style.opacity = `1`;
-    }
-    section.style.gridTemplateRows = `${precent*100}vh 46vh 46vh 8vh`;
-
+  if(precent <= 0.25){
     cancelJobsAnimation();
   }
   else{
-    for (const elem of texts){
-      elem.style.opacity = `1`;
-    }
-    section.style.gridTemplateRows = `110vh 46vh 46vh 8vh`;
-
     startJobsAnimation();
   }
 
-  // The scroll buttons dissaperence
-  if(precent <= 0.3){
-    for (const elem of scrolls){
-      elem.style.opacity = `${1-precent*(1/0.3)}`
-    }
+  // Menu btn sizes animation
+  if(precent < 0.1){
+    logoImg.style.width = '120px';
+    aboutBtn.style.fontSize = '1.8rem';
+    careerBtn.style.fontSize = '1.8rem';
+  }
+  else if(precent < 0.85){
+    logoImg.style.width = '100px';
+    aboutBtn.style.fontSize = '2.2rem';
+    careerBtn.style.fontSize = '1.8rem';
   }
   else{
-    for (const elem of scrolls){
-      elem.style.opacity = `0`
-    }
+    logoImg.style.width = '100px';
+    careerBtn.style.fontSize = '2.2rem';
+    aboutBtn.style.fontSize = '1.8rem';
   }
-
-  window.scrollTo(0, scrollY);
-}
-
-// The jobs scroll button event - scrolling smoothly
-document.getElementById('scroll-icon').onclick = function(e){
-  anchoreScrolling=true;
-  document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-  });
-  setTimeout(function(){ anchoreScrolling=false; }, 450);
-  startJobsAnimationNow();
 }
 
 // Jobs list animation
@@ -92,17 +70,6 @@ function startJobsAnimationNow(){
 }
 function startJobsAnimation(){
   if(!animation){
-      setTimeout(startJobsAnimationNow, 300);
+      setTimeout(startJobsAnimationNow, 150);
   }
-}
-
-// The scrollArrows animation
-scrollArrowAnimation();
-function scrollArrowAnimation(){
-  var floatSlownes = 500;
-  var floatRange = 13;
-  for (const elem of scrolls){
-    elem.style.transform = `translate3d(0, ${floatRange*Math.sin(Date.now()/floatSlownes)}px , 0)`
-  }
-  setTimeout(scrollArrowAnimation, 10);
 }

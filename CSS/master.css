@@ -5,11 +5,12 @@
   overflow-anchor: none;
   --lighter-blue-color: rgba(2,0,97,1);
   --darker-blue-color: rgba(3,22,65,1);
+  --opening-height: 40vh;
 }
 body{
   margin: 0;
   padding: 0;
-  background-color: rgba(20,20,120,1);
+  background-color: black;
 }
 
 h3, h2, h1{
@@ -28,96 +29,110 @@ h1{
   font-weight: 400;
   font-size: 2.2rem;
 }
-
-#description-section{
-  background-image: linear-gradient(1deg,  var(--darker-blue-color) 15%, rgba(97,149,219,1) 158.5% );
+p{
+  margin: 0;
 }
-#description-grid{
-  height: 210vh;
-  display: grid;
-  grid-template-rows: 0 100vh 92vh 8vh; /* 0 50% 46% 4% --> 50% 23% 23% 4% */
+a{
+  text-decoration: none;
+  color: #FFFAE2;
+}
+a:visited{
+  color: #FFFAE2;
+}
+a:visited:hover{
+  color: #b3ae9b;
+}
+a:hover{
+  color: #b3ae9b;
+}
+ul{
+  padding: 0;
+}
+
+/* -----------------Opening Section--------------------- */
+#opening-section{
+  height: var(--opening-height);
   text-align: center;
+  display: table;
+}
+.opening-background-image{
+  background-image: url('../Images/PicSpeed.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  background-position: center;
+  filter: brightness(43%);
+  position: absolute;
+  width: 100%;
+  height:  var(--opening-height);
+}
+.opening-sentance{
+  padding-left: 15vw;
+  /* vertical alignment */
+  display: table-cell;
+  width: 100vw;
+  vertical-align: middle;
+
+  /* Show infornt image */
+  position: relative;
+  z-index: 5;
+
+  /* Text */
+  font-size: 2.7rem;
+  font-weight: 700;
+  text-shadow: 0 0 1px black;
+}
+
+/* ------------------About Section----------------- */
+#about-section{
+  background-image: linear-gradient(1deg,  var(--darker-blue-color) 15%, rgba(97,149,219,1) 158.5% );
+  height: 100vh;
+  width: 100%;
+}
+#about-grid{
+  padding: 20vh 5% 0 15vw;
+  display: grid;
+  grid-template-columns: 40% 50%;
+  text-align: left;
 }
 .description-text-block{
-  padding: 0 20%;
+  padding-top: 15%;
 }
 .description{
-  opacity: 0;
   line-height: 40px;
 }
 .logo-block{
-  padding: 3% 0;
+  padding: 10%;
 }
 .logo{
-  width: auto;
-  height: 100%;
-}
-.scroll-down-icon{
-  position: relative;
-  bottom: 80px;
-  cursor: pointer;
-  transition: bottom .4s ease-out;
-}
-.scroll-down-icon:hover{
-  bottom: 65px;
-}
-.scroll-left{
-  left: 40px;
-}
-.scroll-right{
-  right: 40px;
-}
-.scroll-start-icon{
-  position: fixed;
-  top: 40vh;
-  /* cursor: pointer; */
-  height: 20vh;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(1000%) contrast(200%);
+  width: 100%;
+  height: auto;
 }
 
-/* ----------Jobs Section------------------ */
+/* ----------Careers Section------------------ */
 #jobs-section{
   height: 100vh;
-
   /* background-image: radial-gradient( circle farthest-corner at 85.4% 50.8%,  rgba(14,72,222,1) 0%, rgba(3,22,65,1) 74.2% ); */
   background-image: radial-gradient( circle farthest-corner at 82.4% 60.8%,  rgba(97,149,219,1) -50%, rgba(3,22,65,1) 74.2% );
 }
 .jobs-section-padder{
-  padding: 8% 25% 0;
+  padding: 8% 0 0 25%;
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-rows: 5vh 60vh 5vh;
+  grid-template-rows: 5vh 65vh 5vh;
   height: 80%;
-  width: 50%;
+  width: 60%;
 }
 
 .contact-text{
-  text-align: center;
   font-size: 1.2rem;
   font-weight: 400;
 }
 .contact-link{
   color: #fff68f;
   font-size: 1.4rem;
-  text-decoration: none;
   transition: color .1s linear;
 }
 .contact-link:hover{
   color: #b3ac64;
-}
-
-#img{
-  position: absolute;
-  z-index: 1;
-}
-
-#img2{
-  position: absolute;
-  z-index: 1;
-  left: 72.4%;
-  top: 53%;
-  /* bottom: 10%; */
-  width: 20%;
-  height: auto;
 }
