@@ -2,7 +2,6 @@
 #web-nav {
     height: 100vh;
     width: 15vw;
-    /* background: url(assets/img/menu-bg.png) repeat; */
     background-color: black;
     z-index: 20;
     position: fixed;
@@ -35,4 +34,21 @@
 
 .menu-nav li a{
   transition: font-size 200ms ease;
+}
+
+/* -----------------Navbar Phone-------------------- */
+#web-nav-phone {
+    height: 12vh;
+    width: 100vw;
+    background-color: black;
+    z-index: 20;
+    position: fixed;
+    top: 0px;
+    opacity: 0.7;
+}
+.logo-nav-phone {
+    margin: 1vh 30px;
+    display: block;
+    width: auto;
+    height: 10vh;
 }

@@ -49,11 +49,26 @@ ul{
   padding: 0;
 }
 
+/* ---------------------Scroll Bar------------------ */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #b3a981;
+}
+
+
 /* -----------------Opening Section--------------------- */
 #opening-section{
   height: var(--opening-height);
   text-align: center;
   display: table;
+  position: relative;
 }
 .opening-background-image{
   background-image: url('../Images/PicSpeed.jpg');
@@ -63,7 +78,8 @@ ul{
   filter: brightness(43%);
   position: absolute;
   width: 100%;
-  height:  var(--opening-height);
+  height: 100%;
+  min-height: var(--opening-height);
 }
 .opening-sentance{
   padding-left: 15vw;
@@ -85,11 +101,12 @@ ul{
 /* ------------------About Section----------------- */
 #about-section{
   background-image: linear-gradient(1deg,  var(--darker-blue-color) 15%, rgba(97,149,219,1) 158.5% );
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   width: 100%;
 }
 #about-grid{
-  padding: 20vh 5% 0 15vw;
+  padding: 20vh 5% 5% 15vw;
   display: grid;
   grid-template-columns: 40% 50%;
   text-align: left;
@@ -110,18 +127,10 @@ ul{
 
 /* ----------Careers Section------------------ */
 #jobs-section{
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   /* background-image: radial-gradient( circle farthest-corner at 85.4% 50.8%,  rgba(14,72,222,1) 0%, rgba(3,22,65,1) 74.2% ); */
   background-image: radial-gradient( circle farthest-corner at 82.4% 60.8%,  rgba(97,149,219,1) -50%, rgba(3,22,65,1) 74.2% );
-}
-.jobs-section-padder{
-  padding: 8% 0 0 25%;
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-rows: 5vh 65vh 5vh;
-  height: 80%;
-  width: 60%;
 }
 
 .contact-text{
