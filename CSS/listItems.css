@@ -80,6 +80,7 @@ div.dot {
   width: var(--dot-diameter);
   overflow: hidden;
   position: absolute;
+  transform: translate3d(200%, 0, 0);
 }
 div.dot.top {
   z-index: 20;
@@ -217,7 +218,7 @@ div.dot.dot4 {
 	50% {
 		background: #9babbe;
 		box-shadow: 0 120px 40px rgba(0, 0, 0, 0.1);
-		transform: scale3d(1.25, 0.9, 1) translate3d(200%, -150%, 0);
+		transform: scale3d(1.1, 0.9, 1) translate3d(200%, -150%, 0);
 	}
 
 	100% {
@@ -236,7 +237,7 @@ div.dot.dot4 {
 	50% {
 		background: #94a6ba;
 		box-shadow: 0 100px 30px rgba(0, 0, 0, 0.15);
-		transform: scale3d(1.15, 0.9, 1) translate3d(200%, -116.66%, 0);
+		transform: scale3d(1.1, 0.9, 1) translate3d(200%, -116.66%, 0);
 	}
 
 	100% {
@@ -274,7 +275,7 @@ div.dot.dot4 {
 	50% {
 		background: #889cb2;
 		box-shadow: 0 60px 10px rgba(0, 0, 0, 0.3);
-		transform: scale3d(1.075, 0.9, 1) translate3d(200%, -50%, 0);
+		transform: scale3d(1.1, 0.9, 1) translate3d(200%, -50%, 0);
 	}
 
 	100% {

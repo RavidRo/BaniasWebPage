@@ -48,6 +48,7 @@ document.getElementById('scroll-icon').onclick = function(e){
       behavior: 'smooth'
   });
   setTimeout(function(){ anchoreScrolling=false; }, 450);
+  startJobsAnimationNow();
 }
 
 // Jobs list animation
@@ -62,17 +63,20 @@ function cancelJobsAnimation(){
     elem.classList.remove("title-animate");
   }
 }
-function startJobsAnimation(){
+function startJobsAnimationNow(){
   if(!animation){
     animation= true;
-      setTimeout(function(){
-        document.querySelector("div.top").classList.add("dot1");
-        document.querySelector("div.mid").classList.add("dot2");
-        document.querySelector("div.btm").classList.add("dot3");
-        document.querySelector("div.btm-btm").classList.add("dot4");
-        for (const elem of document.getElementsByClassName("title-animate-js")){
-          elem.classList.add("title-animate");
-        }
-      }, 500);
+    document.querySelector("div.top").classList.add("dot1");
+    document.querySelector("div.mid").classList.add("dot2");
+    document.querySelector("div.btm").classList.add("dot3");
+    document.querySelector("div.btm-btm").classList.add("dot4");
+    for (const elem of document.getElementsByClassName("title-animate-js")){
+      elem.classList.add("title-animate");
+    }
+  }
+}
+function startJobsAnimation(){
+  if(!animation){
+      setTimeout(startJobsAnimationNow, 300);
   }
 }
