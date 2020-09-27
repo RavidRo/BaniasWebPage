@@ -90,23 +90,8 @@ body::-webkit-scrollbar-thumb {
   min-height: var(--opening-height-phone);
 }
 
-@media only screen and (min-width: 768px) {
-  .opening-background-image{
-    background-size: 100vw auto;
-    min-height: var(--opening-height);
-  }
-  #opening-section{
-    height: var(--opening-height);
-  }
-}
-@media only screen and (min-width: 568px) {
-  .opening-background-image{
-    background-size: 100vw auto;
-  }
-}
-
 .opening-sentance{
-  padding-left: 15vw;
+  padding: 0 5vw;
 
   /* vertical alignment */
   display: table-cell;
@@ -121,6 +106,24 @@ body::-webkit-scrollbar-thumb {
   font-size: 2.7rem;
   font-weight: 700;
   text-shadow: 0 0 1px black;
+}
+
+@media only screen and (min-width: 768px) {
+  .opening-sentance{
+    padding: 0 5vw 0 calc(80px + 10vw);
+  }
+  .opening-background-image{
+    background-size: 100vw auto;
+    min-height: var(--opening-height);
+  }
+  #opening-section{
+    height: var(--opening-height);
+  }
+}
+@media only screen and (min-width: 568px) {
+  .opening-background-image{
+    background-size: 100vw auto;
+  }
 }
 
 /* ------------------About Section----------------- */

@@ -43,6 +43,7 @@
 
 /* -----------------Navbar Phone-------------------- */
 #web-nav-phone {
+  display: block;
   min-height: var(--nav-height-min);
   max-height: var(--nav-height);
   width: 100vw;
