@@ -73,3 +73,19 @@ function startJobsAnimation(){
       setTimeout(startJobsAnimationNow, 150);
   }
 }
+
+// Burger Menu
+const menuBtn = document.querySelector('.menu-btn');
+const navbar = document.getElementById('web-nav-phone');
+let menuOpen = false;
+menuBtn.addEventListener('click', ()=>{
+  if(!menuOpen) {
+    menuBtn.classList.add('open');
+    navbar.classList.add('open');
+  }
+  else{
+    menuBtn.classList.remove('open');
+    navbar.classList.remove('open');
+  }
+  menuOpen = !menuOpen;
+});

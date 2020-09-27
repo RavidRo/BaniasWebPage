@@ -6,7 +6,8 @@
     z-index: 20;
     position: fixed;
     left: 0px;
-    opacity: 0.7
+    opacity: 0.7;
+    display: none;
 }
 
 .logo-nav {
@@ -18,7 +19,6 @@
 }
 
 .menu-nav{
-  color: white;
   list-style-type: none;
   text-align: center;
 }
@@ -29,7 +29,6 @@
   text-transform: uppercase;
   line-height: 3rem;
   color: #FFFAE2;
-
 }
 
 .menu-nav li a{
@@ -38,17 +37,122 @@
 
 /* -----------------Navbar Phone-------------------- */
 #web-nav-phone {
-    height: 12vh;
-    width: 100vw;
-    background-color: black;
-    z-index: 20;
-    position: fixed;
-    top: 0px;
-    opacity: 0.7;
+  min-height: 80px;
+  max-height: 12vh;
+  width: 100vw;
+  background-color: black;
+  z-index: 20;
+  opacity: 0.7;
+
+  /* Fixing to top */
+  position: fixed;
+  top: 0px;
+
+  /* Hide list items */
+  overflow: hidden;
+
+  transition: max-height .5s ease-in-out;
 }
+#web-nav-phone.open{
+  max-height: 15rem;
+}
+.nav{
+  position: relative;
+
+  /* Positioning inner elements */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Same as the web-nav height */
+  min-height: 80px;
+  height: 12vh;
+}
+
 .logo-nav-phone {
-    margin: 1vh 30px;
+  margin-top: 5px;
+  margin-left: 30px;
+  display: inline-block;
+  width: auto;
+
+  /* Same as the web-nav height (but a bit smaller) */
+  min-height: 70px;
+  height: 10vh;
+}
+.menu-nav-phone li{
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 3rem;
+  color: #FFFAE2;
+}
+.menu-nav-phone{
+  margin-left: 30px;
+  list-style-type: none;
+}
+.menu-btn-container{
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+.menu-btn{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+
+  /* Same as the web-nav height (but a bit smaller) */
+  min-height: 70px;
+  height: 10vh;
+  min-width: 70px;
+  width: 10vh;
+}
+.menu-btn-burger{
+  width: 50px;
+  height: 6px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn-burger::before,
+.menu-btn-burger::after{
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn-burger::before{
+  transform: translateY(-16px);
+}
+.menu-btn-burger::after{
+  transform: translateY(16px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn-burger{
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn-burger::before{
+  transform: rotate(45deg) ;
+}
+.menu-btn.open .menu-btn-burger::after{
+  transform: rotate(-45deg) ;
+}
+
+/* --------------------Responsive----------------- */
+@media only screen and (min-width: 768px) {
+  #web-nav {
     display: block;
-    width: auto;
-    height: 10vh;
+  }
+  #web-nav-phone{
+    display: none;
+  }
 }
