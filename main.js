@@ -1,15 +1,29 @@
 // Set the menu scroll buttons
-const logoBtn = document.getElementById('logo-btn')
-const aboutBtn = document.getElementById('about-btn')
-const careerBtn = document.getElementById('career-btn')
-logoBtn.onclick = scrollSmoothly;
+const logoBtn = document.getElementById('logo-btn');
+const aboutBtn = document.getElementById('about-btn');
+const careerBtn = document.getElementById('career-btn');
+const logoBtnPhone = document.getElementById('logo-btn-phone');
+const aboutBtnPhone = document.getElementById('about-btn-phone');
+const careerBtnPhone = document.getElementById('career-btn-phone');
+logoBtn.onclick = scrollSmoothlyTop;
 aboutBtn.onclick = scrollSmoothly;
 careerBtn.onclick = scrollSmoothly;
+logoBtnPhone.onclick = scrollSmoothlyTop;
+aboutBtnPhone.onclick = scrollSmoothly;
+careerBtnPhone.onclick = scrollSmoothly;
 
 function scrollSmoothly(e){
   e.preventDefault();
   document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
+  });
+}
+function scrollSmoothlyTop(e){
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
   });
 }
 

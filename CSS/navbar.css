@@ -1,6 +1,12 @@
+:root{
+  --nav-height: 12vh;
+  --nav-height-min: 80px;
+}
+
 /* ------------------Navbar------------------------ */
 #web-nav {
     height: 100vh;
+    min-width: 10rem;
     width: 15vw;
     background-color: black;
     z-index: 20;
@@ -37,8 +43,8 @@
 
 /* -----------------Navbar Phone-------------------- */
 #web-nav-phone {
-  min-height: 80px;
-  max-height: 12vh;
+  min-height: var(--nav-height-min);
+  max-height: var(--nav-height);
   width: 100vw;
   background-color: black;
   z-index: 20;
@@ -65,8 +71,8 @@
   justify-content: space-between;
 
   /* Same as the web-nav height */
-  min-height: 80px;
-  height: 12vh;
+  min-height: var(--nav-height-min);
+  height: var(--nav-height);
 }
 
 .logo-nav-phone {
@@ -76,8 +82,8 @@
   width: auto;
 
   /* Same as the web-nav height (but a bit smaller) */
-  min-height: 70px;
-  height: 10vh;
+  min-height: calc(var(--nav-height-min) - 10px);
+  height: calc(var(--nav-height) - 2vh);
 }
 .menu-nav-phone li{
   font-size: 1.8rem;
@@ -104,10 +110,10 @@
   transition: all .5s ease-in-out;
 
   /* Same as the web-nav height (but a bit smaller) */
-  min-height: 70px;
-  height: 10vh;
-  min-width: 70px;
-  width: 10vh;
+  min-height: calc(var(--nav-height-min) - 10px);
+  height: calc(var(--nav-height) - 2vh);
+  min-width: calc(var(--nav-height-min) - 10px);
+  width: calc(var(--nav-height) - 2vh);
 }
 .menu-btn-burger{
   width: 50px;

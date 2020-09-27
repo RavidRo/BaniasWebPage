@@ -12,7 +12,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: black;
-  overflow-x: hidden; // hide horizontal
+  overflow-x: hidden; /* hide horizontal */
 }
 
 h3, h2, h1{
@@ -67,10 +67,16 @@ body::-webkit-scrollbar-thumb {
 
 /* -----------------Opening Section--------------------- */
 #opening-section{
+  margin-top: 12vh;
   height: var(--opening-height-phone);
   text-align: center;
   display: table;
   position: relative;
+}
+@media only screen and (min-width: 768px) {
+  #opening-section{
+    margin-top: 0;
+  }
 }
 .opening-background-image{
   background-image: url('../Images/PicSpeed.jpg');
@@ -84,16 +90,20 @@ body::-webkit-scrollbar-thumb {
   min-height: var(--opening-height-phone);
 }
 
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .opening-background-image{
     background-size: 100vw auto;
-    background-image: url('../Images/banias_white.png');
     min-height: var(--opening-height);
   }
   #opening-section{
     height: var(--opening-height);
   }
-} */
+}
+@media only screen and (min-width: 568px) {
+  .opening-background-image{
+    background-size: 100vw auto;
+  }
+}
 
 .opening-sentance{
   padding-left: 15vw;
@@ -121,27 +131,51 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 #about-grid{
-  padding: 20vh 5% 5% 15vw;
+  padding: 20vh 5vw 5% calc(90px + 10vw);
   display: grid;
-  grid-template-columns: 40% 50%;
   text-align: left;
 }
-.description-text-block{
-  padding-top: 15%;
+.about-text-block{
+  padding-top: 12%;
 }
-.description{
+.about-text{
   line-height: 40px;
 }
 .logo-block{
+  position: relative;
+  display: flex;
   padding: 10%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .logo{
-  width: 100%;
-  height: auto;
+  height: 30vh;
+  width: auto;
+}
+
+@media only screen and (min-width: 1000px) {
+  #about-grid{
+    grid-template-columns: 40vw 40vw;
+  }
+  .logo{
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #about-grid{
+    grid-template-rows: 25vh 40vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #about-grid{
+    padding-left: 5vw;
+  }
 }
 
 /* ----------Careers Section------------------ */
-#jobs-section{
+#careers-section{
   min-height: 100vh;
   height: auto;
   /* background-image: radial-gradient( circle farthest-corner at 85.4% 50.8%,  rgba(14,72,222,1) 0%, rgba(3,22,65,1) 74.2% ); */

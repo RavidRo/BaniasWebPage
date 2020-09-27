@@ -2,13 +2,17 @@
   --dot-diameter: 75px;
 }
 
-.jobs-section-padder{
-  padding: 8% 0 5% 25%;
+.careers-section-padder{
+  padding: 20% 5% 5% 5%;
   position: relative;
   z-index: 2;
   display: grid;
   grid-template-rows: auto calc(var(--dot-diameter) * 4 + 4 * 25px) auto;
-  width: 60%;
+}
+@media only screen and (min-width: 768px) {
+  .careers-section-padder{
+    padding: 8% 0 5% 25%;
+  }
 }
 
 div.holder {
@@ -31,7 +35,7 @@ ul.titles li {
   opacity: 0;
   padding: 0;
   position: absolute;
-  width: 60vw;
+  width: 30rem;
   overflow: auto;
 }
 ul.titles li.title1 {
