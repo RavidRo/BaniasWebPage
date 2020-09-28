@@ -78,8 +78,6 @@ body::-webkit-scrollbar-thumb {
 .opening-background-image{
   background-image: url('../Images/PicSpeed.jpg');
   background-repeat: no-repeat;
-  background-size: auto 100vh;
-  /* background-size: 0 0; */
   background-position: center;
   filter: brightness(43%);
   position: absolute;
@@ -111,8 +109,6 @@ body::-webkit-scrollbar-thumb {
     padding: 0 5vw 10vh calc(80px + 10vw);
   }
   .opening-background-image{
-    background-size: auto 100vh;
-    /* background-size: 100vw auto; */
     min-height: var(--opening-height);
   }
   #opening-section{
@@ -130,9 +126,10 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 #about-grid{
-  padding: 20vh 5vw 5% calc(90px + 10vw);
+  padding: 20vh 5vw 5% 5vw;
   display: grid;
   text-align: left;
+  grid-template-rows: 25vh auto;
 }
 .about-text-block{
   padding-top: 17%;
@@ -159,6 +156,7 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 1000px) {
   #about-grid{
     grid-template-columns: 40vw 40vw;
+    grid-template-rows: none;
   }
   .logo{
     max-height: none;
@@ -166,14 +164,9 @@ body::-webkit-scrollbar-thumb {
     height: auto;
   }
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 768px) {
   #about-grid{
-    grid-template-rows: 25vh auto;
-  }
-}
-@media only screen and (max-width: 768px) {
-  #about-grid{
-    padding-left: 5vw;
+    padding-left: calc(90px + 10vw);
   }
 }
 
