@@ -1,6 +1,6 @@
 :root{
   color: #FFFAE2;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   overflow-anchor: none;
   --lighter-blue-color: rgba(2,0,97,1);
@@ -18,18 +18,18 @@ body{
 h3, h2, h1{
   margin: 0;
 }
+h1{
+  font-weight: 400;
+  font-size: 2.4rem;
+}
 h2{
   font-weight: 400;
-  font-size: 1.9rem;
+  font-size: 2.1rem;
   margin: 2% 0 1%;
 }
 h3{
   font-weight: 300;
-  font-size: 1.7rem;
-}
-h1{
-  font-weight: 400;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
 }
 p{
   margin: 0;
@@ -100,8 +100,8 @@ body::-webkit-scrollbar-thumb {
   z-index: 5;
 
   /* Text */
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 600;
   text-shadow: 0 0 1px black;
 }
 
@@ -199,12 +199,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contact-text{
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
 }
 .contact-link{
   color: #fff68f;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   transition: color .1s linear;
 }
 .contact-link:hover{

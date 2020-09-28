@@ -30,7 +30,7 @@
 }
 
 .menu-nav li{
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 3rem;
@@ -87,7 +87,7 @@
   height: calc(var(--nav-height) - 2vh);
 }
 .menu-nav-phone li{
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 3rem;
