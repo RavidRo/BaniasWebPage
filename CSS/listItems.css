@@ -18,6 +18,11 @@
     padding: 8% 0 5% 25%;
   }
 }
+@media only screen and (max-device-width: 768px) {
+  .careers-section-padder{
+    padding: 20% 5% 5% 5%;
+  }
+}
 
 div.holder {
   padding-top: 3rem;
