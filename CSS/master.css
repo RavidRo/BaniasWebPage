@@ -5,8 +5,8 @@
   overflow-anchor: none;
   --lighter-blue-color: rgba(2,0,97,1);
   --darker-blue-color: rgba(3,22,65,1);
-  --opening-height: 40vh;
-  --opening-height-phone: 30vh;
+  --opening-height: 100vh;
+  --opening-height-phone: 100vh;
 }
 body{
   margin: 0;
@@ -67,21 +67,19 @@ body::-webkit-scrollbar-thumb {
 
 /* -----------------Opening Section--------------------- */
 #opening-section{
-  margin-top: 12vh;
+  /* margin-top: 12vh; Used it when the picture at the tope was smaller and didnt want the nav to be on it */
+  margin-top: 0;
   height: var(--opening-height-phone);
   text-align: center;
   display: table;
   position: relative;
 }
-@media only screen and (min-width: 768px) {
-  #opening-section{
-    margin-top: 0;
-  }
-}
+
 .opening-background-image{
   background-image: url('../Images/PicSpeed.jpg');
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: auto 100vh;
+  /* background-size: 0 0; */
   background-position: center;
   filter: brightness(43%);
   position: absolute;
@@ -110,21 +108,19 @@ body::-webkit-scrollbar-thumb {
 
 @media only screen and (min-width: 768px) {
   .opening-sentance{
-    padding: 0 5vw 0 calc(80px + 10vw);
+    padding: 0 5vw 10vh calc(80px + 10vw);
   }
   .opening-background-image{
-    background-size: 100vw auto;
+    background-size: auto 100vh;
+    /* background-size: 100vw auto; */
     min-height: var(--opening-height);
   }
   #opening-section{
+    margin-top: 0;
     height: var(--opening-height);
   }
 }
-@media only screen and (min-width: 568px) {
-  .opening-background-image{
-    background-size: 100vw auto;
-  }
-}
+
 
 /* ------------------About Section----------------- */
 #about-section{
@@ -140,6 +136,7 @@ body::-webkit-scrollbar-thumb {
 }
 .about-text-block{
   padding-top: 17%;
+  max-width: 94vw;
 }
 .about-text{
   line-height: 40px;
@@ -153,8 +150,10 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
 }
 .logo{
-  height: 30vh;
+  max-height: 30vh;
+  height: auto;
   width: auto;
+  max-width: 90vw;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -162,13 +161,14 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 40vw 40vw;
   }
   .logo{
+    max-height: none;
     width: 100%;
     height: auto;
   }
 }
 @media only screen and (max-width: 1000px) {
   #about-grid{
-    grid-template-rows: 25vh 40vh;
+    grid-template-rows: 25vh auto;
   }
 }
 @media only screen and (max-width: 768px) {
