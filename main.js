@@ -46,7 +46,7 @@ document.onscroll = function(e){
     aboutBtn.style.fontSize = '1.8rem';
     careerBtn.style.fontSize = '1.8rem';
   }
-  else if(precent < 0.85){
+  else if(precent < 1.3){
     logoImg.style.width = '100px';
     aboutBtn.style.fontSize = '2.2rem';
     careerBtn.style.fontSize = '1.8rem';

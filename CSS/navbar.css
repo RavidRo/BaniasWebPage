@@ -61,7 +61,7 @@
   transition: max-height .5s ease-in-out;
 }
 #web-nav-phone.open{
-  max-height: 15rem;
+  max-height: calc(var(--nav-height) + 10rem);
 }
 .nav{
   position: relative;
