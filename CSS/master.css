@@ -199,6 +199,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contact-text{
+  margin-top: 4vh;
   font-size: 1.8rem;
   font-weight: 400;
 }
