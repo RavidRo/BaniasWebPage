@@ -1,7 +1,7 @@
 :root{
   color: #FFFAE2;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
+  /* font-size: 16px; */
   overflow-anchor: none;
   --lighter-blue-color: rgba(2,0,97,1);
   --darker-blue-color: rgba(3,22,65,1);
