@@ -29,7 +29,6 @@ div.holder {
   position: relative;
   height: calc(var(--dot-diameter) * 4 + 4 * 40px);
   width: 10px;
-  flex-grow: 1;
 }
 ul.titles {
   margin: 0;
