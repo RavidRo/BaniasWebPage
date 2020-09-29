@@ -121,6 +121,9 @@ body::-webkit-scrollbar-thumb {
   #opening-section{
     height: var(--opening-height-phone);
   }
+  .opening-sentance{
+    font-size: 3.2rem;
+  }
 }
 
 
@@ -172,21 +175,27 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-device-width: 1000px) {
   #about-grid{
     grid-template-columns: none;
-    grid-template-rows: 25vh auto;
+    grid-template-rows: 22vh auto;
   }
   .logo{
-    max-height: 30vh;
+    max-height: 24vh;
     width: auto;
   }
 }
 @media only screen and (min-width: 768px) {
   #about-grid{
-    padding-left: calc(90px + 10vw);
+    padding-left: calc(110px + 10vw);
   }
 }
 @media only screen and (max-device-width: 768px) {
   #about-grid{
     padding-left: 5vw;
+  }
+  h2{
+    font-size: 1.7rem;
+  }
+  h3{
+    font-size: 1.5rem;
   }
 }
 

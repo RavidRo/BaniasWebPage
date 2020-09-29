@@ -170,4 +170,10 @@
   #web-nav-phone{
     display: block;
   }
+  .menu-nav-phone li{
+    font-size: 2.6rem;
+  }
+  .menu-nav-phone{
+    margin-left: 50px;
+  }
 }
