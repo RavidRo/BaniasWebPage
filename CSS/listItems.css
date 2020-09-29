@@ -6,8 +6,6 @@
   padding: 20% 5% 5% 5%;
   position: relative;
   z-index: 2;
-  /* display: grid; */
-  /* grid-template-rows: auto calc(var(--dot-diameter) * 4 + 4 * 25px) auto; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -19,7 +17,7 @@
 }
 @media only screen and (max-device-width: 768px) {
   .careers-section-padder{
-    padding: 40% 5% 5% 5%;
+    padding: 30vh 5% 5% 5%;
   }
 }
 
