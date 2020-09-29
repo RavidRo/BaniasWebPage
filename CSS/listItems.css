@@ -46,7 +46,8 @@ ul.titles li {
 }
 @media only screen and (max-device-width: 768px) {
   ul.titles li {
-    font-size: 2.7rem;
+    font-size: 3rem;
+    width: 35rem;
   }
 }
 ul.titles li.title1 {
