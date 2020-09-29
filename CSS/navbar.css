@@ -171,9 +171,9 @@
     display: block;
   }
   .menu-nav-phone li{
-    font-size: 2.6rem;
+    font-size: 3.4rem;
   }
   .menu-nav-phone{
-    margin-left: 50px;
+    margin-left: 3vh;
   }
 }
