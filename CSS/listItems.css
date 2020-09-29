@@ -44,6 +44,11 @@ ul.titles li {
   width: 30rem;
   overflow: auto;
 }
+@media only screen and (max-device-width: 768px) {
+  ul.titles li {
+    font-size: 2.7rem;
+  }
+}
 ul.titles li.title1 {
   -webkit-transform: translate3d(0, -187.5%, 0);
           transform: translate3d(0, -187.5%, 0);
