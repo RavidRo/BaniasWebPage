@@ -142,7 +142,7 @@ body::-webkit-scrollbar-thumb {
   max-width: 94vw;
 }
 .about-text{
-  line-height: 40px;
+  line-height: 2.7rem;
 }
 .logo-block{
   position: relative;
