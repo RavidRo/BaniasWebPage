@@ -162,7 +162,7 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 1000px) {
   #about-grid{
     /* The text block width is the screen - left padding - left image - right padding */
-    grid-template-columns: 27vw calc(100vw - 13rem - 27vw - 5vw);
+    grid-template-columns: 27vw calc(100vw - max(13rem, 13.5vw) - 27vw - 5vw);
     grid-template-rows: none;
   }
   .logo{
