@@ -8,7 +8,7 @@ function msieversion() {
     // Remove none IE CSS
     var elements = document.querySelectorAll('link[rel=stylesheet]');
     for(var i=0;i<elements.length;i++){
-      if(elements[i].getAttribute("ie") === "false"){
+      if(elements[i].getAttribute("ie") === "true"){
         elements[i].parentNode.removeChild(elements[i]);
       }
     }
@@ -17,7 +17,7 @@ function msieversion() {
     // Remove IE CSS
     var elements = document.querySelectorAll('link[rel=stylesheet]');
     for(var i=0;i<elements.length;i++){
-      if(elements[i].getAttribute("ie") === "true"){
+      if(elements[i].getAttribute("ie") === "false"){
         elements[i].parentNode.removeChild(elements[i]);
       }
     }
