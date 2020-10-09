@@ -9,7 +9,7 @@ function msieversion() {
     var elements = document.querySelectorAll('link[rel=stylesheet]');
     for(var i=0;i<elements.length;i++){
       if(elements[i].getAttribute("ie") === "false"){
-        // elements[i].parentNode.removeChild(elements[i]);
+        elements[i].parentNode.removeChild(elements[i]);
       }
     }
   }
