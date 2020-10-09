@@ -5,18 +5,22 @@ function msieversion() {
 
   if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
   {
-    // Remove current stylesheets
+    // Remove none IE CSS
     var elements = document.querySelectorAll('link[rel=stylesheet]');
     for(var i=0;i<elements.length;i++){
+      if(elements[i].getAttribute("IE") === "false"){
         elements[i].parentNode.removeChild(elements[i]);
+      }
     }
-
-    // Add costume stylesheet
-    var linkElement = this.document.createElement('link');
-    linkElement.setAttribute('rel', 'stylesheet');
-    linkElement.setAttribute('type', 'text/css');
-    linkElement.setAttribute('href', './CSS/IE.css');
-    document.head.appendChild(linkElement);
+  }
+  else{
+    // Remove IE CSS
+    var elements = document.querySelectorAll('link[rel=stylesheet]');
+    for(var i=0;i<elements.length;i++){
+      if(elements[i].getAttribute("IE") === "true"){
+        elements[i].parentNode.removeChild(elements[i]);
+      }
+    }
   }
 }
 msieversion();
