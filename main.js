@@ -1,3 +1,26 @@
+// Costum CSS sheets for IE11 and lower
+function msieversion() {
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf("MSIE ");
+
+  if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+  {
+    // Remove current stylesheets
+    var elements = document.querySelectorAll('link[rel=stylesheet]');
+    for(var i=0;i<elements.length;i++){
+        elements[i].parentNode.removeChild(elements[i]);
+    }
+
+    // Add costume stylesheet
+    var linkElement = this.document.createElement('link');
+    linkElement.setAttribute('rel', 'stylesheet');
+    linkElement.setAttribute('type', 'text/css');
+    linkElement.setAttribute('href', './CSS/IE.css');
+    document.head.appendChild(linkElement);
+  }
+}
+msieversion();
+
 // Set the menu scroll buttons
 const logoBtn = document.getElementById('logo-btn');
 const aboutBtn = document.getElementById('about-btn');
@@ -15,7 +38,7 @@ careerBtnPhone.onclick = scrollSmoothly;
 function scrollSmoothly(e){
   e.preventDefault();
   document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+    behavior: 'smooth'
   });
 }
 function scrollSmoothlyTop(e){
@@ -66,9 +89,9 @@ function cancelJobsAnimation(){
   document.querySelector("div.mid").classList.remove("dot2");
   document.querySelector("div.btm").classList.remove("dot3");
   document.querySelector("div.btm-btm").classList.remove("dot4");
-  for (const elem of document.getElementsByClassName("title-animate-js")){
-    elem.classList.remove("title-animate");
-  }
+  // for (let elem of document.getElementsByClassName("title-animate-js")){
+  //   elem.classList.remove("title-animate");
+  // }
 }
 function startJobsAnimationNow(){
   if(!animation){
@@ -77,9 +100,9 @@ function startJobsAnimationNow(){
     document.querySelector("div.mid").classList.add("dot2");
     document.querySelector("div.btm").classList.add("dot3");
     document.querySelector("div.btm-btm").classList.add("dot4");
-    for (const elem of document.getElementsByClassName("title-animate-js")){
-      elem.classList.add("title-animate");
-    }
+    // for (let elem of document.getElementsByClassName("title-animate-js")){
+    //   elem.classList.add("title-animate");
+    // }
   }
 }
 function startJobsAnimation(){
@@ -92,7 +115,7 @@ function startJobsAnimation(){
 const menuBtn = document.querySelector('.menu-btn');
 const navbar = document.getElementById('web-nav-phone');
 let menuOpen = false;
-menuBtn.addEventListener('click', ()=>{
+menuBtn.addEventListener('click', function(){
   if(!menuOpen) {
     menuBtn.classList.add('open');
     navbar.classList.add('open');
@@ -103,3 +126,6 @@ menuBtn.addEventListener('click', ()=>{
   }
   menuOpen = !menuOpen;
 });
+
+
+
