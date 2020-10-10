@@ -93,9 +93,9 @@ function cancelJobsAnimation(){
   document.querySelector("div.mid").classList.remove("dot2");
   document.querySelector("div.btm").classList.remove("dot3");
   document.querySelector("div.btm-btm").classList.remove("dot4");
-  // for (let elem of document.getElementsByClassName("title-animate-js")){
-  //   elem.classList.remove("title-animate");
-  // }
+  for (let elem of document.getElementsByClassName("title-animate-js")){
+    elem.classList.remove("title-animate");
+  }
 }
 function startJobsAnimationNow(){
   if(!animation){
@@ -104,9 +104,9 @@ function startJobsAnimationNow(){
     document.querySelector("div.mid").classList.add("dot2");
     document.querySelector("div.btm").classList.add("dot3");
     document.querySelector("div.btm-btm").classList.add("dot4");
-    // for (let elem of document.getElementsByClassName("title-animate-js")){
-    //   elem.classList.add("title-animate");
-    // }
+    for (let elem of document.getElementsByClassName("title-animate-js")){
+      elem.classList.add("title-animate");
+    }
   }
 }
 function startJobsAnimation(){
