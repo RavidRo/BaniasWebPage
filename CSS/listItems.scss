@@ -1,0 +1,198 @@
+:root {
+	--dot-diameter: 75px;
+}
+
+$dot-diameter: 75px;
+$dot-count: 4;
+
+.careers-section-padder {
+	padding: 20% 5% 5% 5%;
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+@media only screen and (min-width: 768px) {
+	.careers-section-padder {
+		padding: 4% 3% 5% 25%;
+	}
+}
+@media only screen and (max-device-width: 768px) {
+	.careers-section-padder {
+		padding: 28vh 5% 5% 5%;
+	}
+}
+
+div.holder {
+	padding-top: 3rem;
+	position: relative;
+	height: ($dot-diameter + 15) * $dot-count;
+	width: 10px;
+}
+ul.titles {
+	margin: 0;
+	padding: 0;
+}
+ul.titles li {
+	height: 100px;
+	font-size: 2.2rem;
+	font-weight: 300;
+	line-height: $dot-diameter;
+	list-style: none;
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+	position: absolute;
+	width: 30rem;
+	overflow: auto;
+}
+@media only screen and (max-device-width: 768px) {
+	ul.titles li {
+		font-size: 3rem;
+		width: 35rem;
+	}
+}
+
+@mixin transform($property) {
+	-webkit-transform: $property;
+	transform: $property;
+}
+
+@function intervalLinear($start, $end, $index) {
+	@return $start + (($end - $start)/ ($dot-count - 1)) * $index;
+}
+
+@for $i from 0 to $dot-count {
+	$start: -187.5%;
+	$end: 187.5%;
+	ul.titles li.title#{$i + 1} {
+		@include transform(translate3d(0, intervalLinear($start, $end, $i), 0));
+	}
+}
+
+@for $i from 0 to $dot-count {
+	$start: 1s;
+	$end: 1.75s;
+	ul.titles li.title-animate.title#{$i + 1} {
+		-webkit-animation: title-animate#{$i +
+			1}
+			intervalLinear($start, $end, $i)
+			1
+			intervalLinear(1.2s, 2.4s, $i)
+			forwards;
+		animation: title-animate#{$i +
+			1}
+			intervalLinear($start, $end, $i)
+			1
+			intervalLinear(1.2s, 2.4s, $i)
+			forwards;
+	}
+}
+
+.engineer-svg {
+	background-image: url('../SVG/engineer.svg');
+	height: 100%;
+	width: auto;
+}
+.leader-svg {
+	background-image: url('../SVG/leader.svg');
+	height: 100%;
+	width: auto;
+}
+.designer-svg {
+	background-image: url('../SVG/designer.svg');
+	height: 100%;
+	width: auto;
+}
+
+div.dot {
+	background: #8599b0;
+	border-radius: $dot-diameter;
+	height: $dot-diameter;
+	width: $dot-diameter;
+	overflow: hidden;
+	position: absolute;
+	transform: translate3d(200%, 0, 0);
+}
+
+@for $i from 1 through $dot-count {
+	div.dot.dot#{$i} {
+		z-index: 5 * $i;
+		-webkit-animation: pickup#{$i} 1.5s 1 forwards;
+		animation: pickup#{$i} 1.5s 1 forwards;
+	}
+}
+
+@for $i from 0 to $dot-count {
+	$start: 0;
+	$end: ($dot-count - 1) * 1.25;
+	@-webkit-keyframes title-animate#{$i + 1} {
+		0% {
+			opacity: 0;
+			@include transform(
+				translate3d(
+					$dot-diameter + 95px,
+					$dot-diameter * intervalLinear($start, $end, $i),
+					0
+				)
+			);
+		}
+		100% {
+			opacity: 1;
+			@include transform(
+				translate3d(
+					$dot-diameter + 20px,
+					$dot-diameter * intervalLinear($start, $end, $i),
+					0
+				)
+			);
+		}
+	}
+	@keyframes title-animate#{$i + 1} {
+		0% {
+			opacity: 0;
+			@include transform(
+				translate3d(
+					$dot-diameter + 95px,
+					$dot-diameter * intervalLinear($start, $end, $i),
+					0
+				)
+			);
+		}
+		100% {
+			opacity: 1;
+			@include transform(
+				translate3d(
+					$dot-diameter + 20px,
+					$dot-diameter * intervalLinear($start, $end, $i),
+					0
+				)
+			);
+		}
+	}
+}
+
+@for $i from 0 to $dot-count {
+	@keyframes pickup#{$i + 1} {
+		0% {
+			background: #8599b0;
+			box-shadow: 0 0 0 rgba(0, 0, 0, 0.2 + $i * 0.1);
+			transform: scale3d(1, 1, 1) translate3d(200%, 187.5%, 0);
+		}
+
+		50% {
+			background: #9babbe;
+			box-shadow: 0 intervalLinear(120px, 60px, $i)
+				intervalLinear(40px, 10px, $i) rgba(0, 0, 0, 0.1 + $i * 0.1);
+			transform: scale3d(1.1, 0.9, 1)
+				translate3d(200%, 37.5% + 33.33% * $i, 0);
+		}
+
+		100% {
+			background: #8599b0;
+			box-shadow: none;
+			transform: scale3d(1, 1, 1) translate3d(0, $i * 125%, 0);
+		}
+	}
+}
